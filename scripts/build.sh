@@ -2,5 +2,5 @@
 
 mkdir build
 cd build
-cmake ../test/ -D CMAKE_BUILD_TYPE=release
+cmake -D CMAKE_BUILD_TYPE=release ../test/
 make
