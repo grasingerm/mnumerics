@@ -189,6 +189,24 @@ bool mnm_vec_equal (const struct mnm_vector* u, const struct mnm_vector* v,
 int mnm_vec_to_str (const struct mnm_vector* vec, char* buffer, 
   const size_t buffer_sz)
 {
-  return snprintf (buffer, buffer_sz, "(%lf, %lf)", 
-    vec -> data[0], vec -> data[1]);
+  unsigned int k = 0;
+  size_t chs = 0;
+
+  if (buffer_sz > 0)
+  {
+    buffer[0] = '(';
+    chs++;
+  }
+  else return chs;
+
+  while (buffer_sz > chs && k < vec->n_elems-1)
+  {
+    chs += snprintf (buffer+chs, buffer_sz-chs, "%lf, ", vec->data[k]);
+    k++;
+  }
+
+  if (chs >= buffer_sz) return chs;
+  chs += snprintf (buffer+chs, buffer_sz-chs, "%lf)", vec->data[k]);
+
+  return chs;
 }

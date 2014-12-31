@@ -26,6 +26,7 @@ include_directories(../include)
 add_library(mnumerics SHARED ../src/mnumerics.c ../src/vector.c)
 add_executable(test_vector test_vector.c)
 add_executable(test_mnumerics test_mnumerics.c)
+add_executable(mnm_ex mnm_ex.c)
 
 if (UNIX)
     target_link_libraries(mnumerics m)
@@ -34,3 +35,4 @@ endif (UNIX)
 
 target_link_libraries(test_vector mnumerics)
 target_link_libraries(test_mnumerics mnumerics)
+target_link_libraries(mnm_ex mnumerics)
