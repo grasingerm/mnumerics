@@ -55,3 +55,36 @@ int mnm_barrsum (const bool* arr, const unsigned int n)
 
   return sum;
 }
+
+//! Scale each element of an array by a constant multiple
+//!
+// \param arr Pointer to array
+// \param n Number of elements to scale
+// \param scale Multiplier
+void mnm_darrscale (double* arr, const unsigned int n, const double scale)
+{
+    unsigned int i;
+    for (i = 0; i < n; i++) arr[i] *= scale;
+}
+
+//! Scale each element of an array by a constant multiple
+//!
+// \param arr Pointer to array
+// \param n Number of elements to scale
+// \param scale Multiplier
+void mnm_iarrscale (int* arr, const unsigned int n, const int scale)
+{
+    unsigned int i;
+    for (i = 0; i < n; i++) arr[i] *= scale;
+}
+
+//! Scale each element of an array by a constant multiple
+//!
+// \param arr Pointer to array
+// \param n Number of elements to scale
+// \param scale Multiplier
+void mnm_larrscale (long* arr, const unsigned int n, const long scale)
+{
+    unsigned int i;
+    for (i = 0; i < n; i++) arr[i] *= scale;
+}

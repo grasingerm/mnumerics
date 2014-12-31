@@ -37,4 +37,7 @@ bool mnm_vec_equal (const struct mnm_vector* u, const struct mnm_vector* v,
 int mnm_vec_to_str (const struct mnm_vector* vec, char* buffer, 
   const size_t buffer_sz);
 
+#define mnm_vec_sum(pv) mnm_darrsum(pv->data, pv->n_elems)
+#define mnm_vec_scale(pv, s) mnm_darrscale(pv->data, pv->n_elems, s)
+
 #endif
